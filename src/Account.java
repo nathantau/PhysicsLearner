@@ -27,8 +27,6 @@ public class Account {
         this.electricityScore = electricityScore;
     }
 
-
-
     //Get Methods
     public String getUsername(){
         return username;
@@ -49,5 +47,4 @@ public class Account {
         return electricityScore;
     }
 
-    
 }

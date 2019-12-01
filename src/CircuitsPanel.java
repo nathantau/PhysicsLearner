@@ -421,6 +421,7 @@ public class CircuitsPanel extends JPanel {
 
     //Paint method
     public void paintComponent(Graphics g) {
+
         g.setColor(Color.black);
         g.fillRect(0, 0, 1920, 1280);
 
@@ -461,6 +462,7 @@ public class CircuitsPanel extends JPanel {
 
     //Draw the Series circuit
     public void drawSeries(Graphics g) {
+
         g.setColor(GREY);
         g.fillRect(50, 300, 550, 600);
         g.fillRect(1300, 300, 550, 600);
@@ -508,6 +510,7 @@ public class CircuitsPanel extends JPanel {
 
     //Draw the Parallel circuit
     public void drawParallel(Graphics g) {
+
         g.setColor(GREY);
         g.fillRect(50, 300, 550, 600);
         g.fillRect(1300, 300, 550, 600);

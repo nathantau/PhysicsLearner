@@ -33,7 +33,7 @@ public class DynamicsMenu extends JPanel {
     private JLabel timeLabel = new JLabel("Time: " + time + "s");
     private JLabel displayLabel = new JLabel("Net Force: " + dynamics.getNetForce());
     private JLabel displayLabel2 = new JLabel("Frictional Force " + df.format(dynamics.getMass() * dynamics.getCoefficient() * 9.81));
-    private JLabel displayLabel3 = new JLabel("Object Acceleration: " + dynamics.getaX() + "m/s^2");
+    private JLabel displayLabel3 = new JLabel("Object Acceleration: " + dynamics.getxAcceleration() + "m/s^2");
     private JLabel infoLabel = new JLabel("Velocity at the last dot: 0m/s");
     private JLabel infoLabel2 = new JLabel("Time of last dot: 0s");
 
@@ -111,7 +111,7 @@ public class DynamicsMenu extends JPanel {
                         dynamics.setTime(time);
                         dynamics.setNetForce();
                         dynamics.setaX();
-                        dynamics.setvX(dynamics.getvX(), time);
+                        dynamics.setvX(dynamics.getXVelocity(), time);
                         dynamics.setxCoordinate((int) dynamics.getHorizontalDisplacement(time) + 100);
                         timeLabel.setText("Time: " + dynamics.getTime() + "s");
                         addInfoLabel(displayLabel, 420, 550);
@@ -119,7 +119,7 @@ public class DynamicsMenu extends JPanel {
                         addInfoLabel(displayLabel3, 420, 650);
                         displayLabel.setText("Net Force: " + dynamics.getNetForce());
                         displayLabel2.setText("Frictional Force " + df.format(dynamics.getMass() * dynamics.getCoefficient() * 9.81));
-                        displayLabel3.setText("Object Acceleration: " + dynamics.getaX() + "m/s^2");
+                        displayLabel3.setText("Object Acceleration: " + dynamics.getxAcceleration() + "m/s^2");
 
                     } else {
                         dynamics.setaXReset();
@@ -159,7 +159,7 @@ public class DynamicsMenu extends JPanel {
         timeLabel.setText("Time: " + dynamics.getTime() + "s");
         displayLabel.setText("Net Force: " + dynamics.getNetForce());
         displayLabel2.setText("Frictional Force " + df.format(dynamics.getMass() * dynamics.getCoefficient() * 9.81));
-        displayLabel3.setText("Object Acceleration: " + dynamics.getaX() + "m/s^2");
+        displayLabel3.setText("Object Acceleration: " + dynamics.getxAcceleration() + "m/s^2");
         infoLabel.setText("Velocity at last dot: " + dynamicsObject.getvX() + "m/s");
         infoLabel2.setText("Time of last dot: " + dynamicsObject.getTime() + "s");
     }

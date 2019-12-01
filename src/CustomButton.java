@@ -1,6 +1,4 @@
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.*;
 
 /**
@@ -8,13 +6,13 @@ import java.awt.*;
  */
 public class CustomButton extends JButton {
 
-    //Colours
-    private Color pressedColor = Color.GREEN;
-    private Color rolloverColor = Color.RED;
+    // Colours
+    private Color PRESSED_COLOR = Color.GREEN;
+    private Color ROLLOVER_COLOR = Color.RED;
     private Color normalColor = Color.BLUE;
 
-    //creates a custom button
-    public CustomButton (String text) {
+    // Creates a custom button
+    public CustomButton (final String text) {
         super(text);
         setBorderPainted(false);
         setFocusPainted(false);
@@ -24,25 +22,20 @@ public class CustomButton extends JButton {
         setForeground(Color.WHITE);
         setText(text);
 
-        addChangeListener(new ChangeListener() {
-            
-            //creates states for the button
-            @Override
-            public void stateChanged(ChangeEvent evt) {
-                if (getModel().isPressed()) {
-                    setBackground(pressedColor);
-                } else if (getModel().isRollover()) {
-                    setBackground(rolloverColor);
-                } else {
-                    setBackground(normalColor);
-                }
+        // Creates states for the button
+        addChangeListener(evt -> {
+            if (getModel().isPressed()) {
+                setBackground(PRESSED_COLOR);
+            } else if (getModel().isRollover()) {
+                setBackground(ROLLOVER_COLOR);
+            } else {
+                setBackground(normalColor);
             }
         });
-
     }
 
-    //Set colour method
-    public void setNormalColor(Color normalColor) {
+    // Set colour method
+    public void setNormalColor(final Color normalColor) {
         this.normalColor = normalColor;
     }
 }

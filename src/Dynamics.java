@@ -2,114 +2,115 @@ import java.text.DecimalFormat;
 
 public class Dynamics {
 
-    //objects will intrinsically have velocities in the x and y directions and accelerations in the x and y directions, they can also possess a launch angle if it's projectile motion
-    private double vX, aX, time;
+    // Objects will intrinsically have velocities in the x and y directions and accelerations in the x and y directions, they can also possess a launch angle if it's projectile motion
+    private double xVelocity, xAcceleration, time;
     private double netForce;
     private int force, mass;
-    private int xCoordinate = 100; //the initial coordinate of the moving object 
+    private int xCoordinate = 100; // Initial coordinate of the moving object
     private double coefficient;
-    DecimalFormat f = new DecimalFormat("##.##");
     
-    //constructor
-    public Dynamics() { //this constructor is used for non-projectile motion
+    private static final DecimalFormat DECIMAL_FORMAT = new DecimalFormat("##.##");
+    
+    // constructor
+    public Dynamics() { // this constructor is used for non-projectile motion
     }
 
-    //get net force
+    //  get net force
     public void setNetForce() {
-        this.netForce = force - coefficient * mass * 9.81;
+        this.netForce = this.force - this.coefficient * this.mass * 9.81;
     }
     
-    //get acceleration method
-    public String getaX() {
-        return f.format(aX);
+    // get acceleration method
+    public String getxAcceleration() {
+        return DECIMAL_FORMAT.format(this.xAcceleration);
     }
 
-    //get veloctiy (string) method
+    // get veloctiy (string) method
     public String getvXInstant() {
-        return f.format (vX);
+        return DECIMAL_FORMAT.format (this.xVelocity);
     }
 
-    //get velocity method
-    public double getvX () {
-    return vX;
+    // get velocity method
+    public double getXVelocity() {
+    return this.xVelocity;
 }
-    //get x-coordinate method
+    // get x-coordinate method
     public int getxCoordinate() {
-        return xCoordinate;
+        return this.xCoordinate;
     }
 
-    //get force applied method
+    // get force applied method
     public int getForce() {
-        return force;
+        return this.force;
     }
 
-    //get mass method
+    // get mass method
     public int getMass() {
-        return mass;
+        return this.mass;
     }
     
-    //get net force method
+    // get net force method
     public String getNetForce() {
-        return f.format(netForce);
+        return DECIMAL_FORMAT.format(netForce);
     }
 
-    //get coefficient of friction method 
+    // get coefficient of friction method 
     public double getCoefficient() {
-        return coefficient;
+        return this.coefficient;
     }
 
-    //set x-coordinate method
+    // set x-coordinate method
     public void setxCoordinate(int xCoordinate) {
         this.xCoordinate = xCoordinate;
     }
 
-    //set velocity method
+    // set velocity method
     public void setvX(double vX, double time) {
-        this.vX = aX * time;
+        this.xVelocity = xAcceleration * time;
     }
 
-    //set velocity (at start) method
+    // set velocity (at start) method
     public void setvX () {
-        this.vX = 0;
+        this.xVelocity = 0;
     }
            
-    //set mass method
+    // set mass method
     public void setMass(int mass) {
         this.mass = mass;
     }
 
-    //set force applied method
+    // set force applied method
     public void setForce(int force) {
         this.force = force;
     }
 
-    //set acceleration method
+    // set acceleration method
     public void setaX() {
-        this.aX = netForce / mass;
+        this.xAcceleration = this.netForce / this.mass;
     }
 
-    //set acceleration (at start) method
+    // set acceleration (at start) method
     public void setaXReset() {
-        this.aX = 0;
+        this.xAcceleration = 0;
     }
     
-    //set coefficient of friction method
+    // set coefficient of friction method
     public void setCoefficient(double coefficient) {
         this.coefficient = coefficient;
     }
 
-    //get instantaneous x-coordinate method 
-    public double getHorizontalDisplacement(double time) { //this returns the instant displacement in the x direction
-        return  vX * time + 1/2 * aX * time * time;
+    // get instantaneous x-coordinate method 
+    public double getHorizontalDisplacement(final double time) { // this returns the instant displacement in the x direction
+        return this.xVelocity * time + 0.5 * this.xAcceleration * time * time;
     }
 
-    //set time method
+    // set time method
     public void setTime(double time) {
         this.time = time;
     }
     
-    //get time method
+    // get time method
     public String getTime() {
-        return f.format(time);
+        return DECIMAL_FORMAT.format(time);
     }
 }

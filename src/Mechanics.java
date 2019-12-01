@@ -1,75 +1,73 @@
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 /**
  * Created by aun4606 on 12/5/2017.
  */
-public class Mechanics  {
+class Mechanics {
 
-    //global variables
-    public static int scoreKinematics;
-    public static int scoreOptics;
-    public static int scoreElectricity;
-    public static int scoreDynamics;
+    // Global variables
+    static int scoreKinematics;
+    static int scoreOptics;
+    static int scoreElectricity;
+    static int scoreDynamics;
 
-    //Main Panels
-    public static JFrame frame = new JFrame();
-    public static IntroPanel introPanel = new IntroPanel();
-    public static MenuPanel menuPanel = new MenuPanel();
+    // Main Panels
+    static JFrame frame = new JFrame();
+    static IntroPanel introPanel = new IntroPanel();
+    static MenuPanel menuPanel = new MenuPanel();
 
-    //Menu Panel
-    public static ProgressMenu progressMenu = new ProgressMenu();
-    public static TutorialMenu tutorialMenu = new TutorialMenu();
-    public static QuestionsMenu questionsMenu = new QuestionsMenu();
+    // Menu Panel
+    static ProgressMenu progressMenu = new ProgressMenu();
+    static TutorialMenu tutorialMenu = new TutorialMenu();
+    static QuestionsMenu questionsMenu = new QuestionsMenu();
 
-    //Kinematics Menus
-    public static OneDMotionPanel oneDMotionPanel = new OneDMotionPanel();
-    public static TwoDMotionPanel twoDMotionPanel = new TwoDMotionPanel();
-    public static ProjectileMotionPanel projectileMotionPanel = new ProjectileMotionPanel();
+    // Kinematics Menus
+    static OneDMotionPanel oneDMotionPanel = new OneDMotionPanel();
+    static TwoDMotionPanel twoDMotionPanel = new TwoDMotionPanel();
+    static ProjectileMotionPanel projectileMotionPanel = new ProjectileMotionPanel();
 
-    //Dynamics Menu
-    public static DynamicsMenu dynamicsMenu = new DynamicsMenu();
+    // Dynamics Menu
+    static DynamicsMenu dynamicsMenu = new DynamicsMenu();
 
-    //Electricity Menus
-    public static CircuitsPanel circuitsPanel = new CircuitsPanel();
+    // Electricity Menus
+    static CircuitsPanel circuitsPanel = new CircuitsPanel();
 
-    //Question Menus
-    public static QuestionsKinematics questionsKinematics = new QuestionsKinematics();
-    public static QuestionsDynamics questionsDynamics = new QuestionsDynamics();
-    public static QuestionsElectricity questionsElectricity = new QuestionsElectricity();
-    public static QuestionsOptics questionsOptics = new QuestionsOptics();
+    // Question Menus
+    static QuestionsKinematics questionsKinematics = new QuestionsKinematics();
+    static QuestionsDynamics questionsDynamics = new QuestionsDynamics();
+    static QuestionsElectricity questionsElectricity = new QuestionsElectricity();
+    static QuestionsOptics questionsOptics = new QuestionsOptics();
 
-    //Optics Menus
-    public static SnellsPanel snellsPanel = new SnellsPanel();
+    // Optics Menus
+    static SnellsPanel snellsPanel = new SnellsPanel();
 
-    //Panel Dimensions
+    // Panel Dimensions
     private Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    private int screenHeight = (int)screenSize.getHeight();
-    private int screenWidth = (int)screenSize.getWidth();
+    private int screenHeight = (int) screenSize.getHeight();
+    private int screenWidth = (int) screenSize.getWidth();
 
-    //Get Methods
-    public int getScreenHeight(){
+    static final int WIDTH = 1920;
+    static final int HEIGHT = 1280;
+
+    // Get Methods
+    int getScreenHeight() {
         return screenHeight;
     }
-    public int getScreenWidth(){
+
+    int getScreenWidth() {
         return screenWidth;
     }
 
-    //Main Method
-    public static void main(String[] args){
-
+    // Main Method
+    static void main(String[] args) {
         addJFrame();
-
     }
 
-    //Method to add the frame
-    public static void addJFrame(){
-        frame.setPreferredSize(new Dimension(1920, 1280));
+    // Method to add the frame
+    static void addJFrame() {
+        frame.setPreferredSize(new Dimension(WIDTH, HEIGHT));
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setUndecorated(true);
         frame.setBackground(Color.black);
