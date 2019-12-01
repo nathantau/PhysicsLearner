@@ -1,7 +1,5 @@
 public class Battery {
 
-
-
     private double voltage; //battery only has voltage
     private boolean closed; //whether the battery is on or not, this decides if the resistor lights up
 

@@ -11,14 +11,14 @@ public class CircuitsPanel extends JPanel {
     private Mechanics mechanics = new Mechanics();
 
     //Fonts
-    private Font titleFont = new Font("SansSerif", Font.PLAIN, 130);
-    private Font fieldFont = new Font("SansSerif", Font.PLAIN, 30);
-    private Font smallFont = new Font("SansSerif", Font.BOLD, 15);
-    private Font fieldBoldFont = new Font("SansSerif", Font.BOLD, 30);
-    private Font timeFont = new Font("TimesRoman", Font.BOLD, 60);
+    private static Font TITLE_FONT = new Font("SansSerif", Font.PLAIN, 130);
+    private static Font FIELD_FONT = new Font("SansSerif", Font.PLAIN, 30);
+    private static Font SMALL_FONT = new Font("SansSerif", Font.BOLD, 15);
+    private static Font FIELD_BOLD_FONT = new Font("SansSerif", Font.BOLD, 30);
+    private static Font TIME_FONT = new Font("TimesRoman", Font.BOLD, 60);
 
     //Colour
-    private Color grey = new Color(50, 50, 50);
+    private static Color GREY = new Color(50, 50, 50);
 
     //Buttons
     private CustomButton seriesButton = new CustomButton("Series");
@@ -117,7 +117,7 @@ public class CircuitsPanel extends JPanel {
     //Add the Circuits instructions panel
     public void addInstructionsButton(){
         CustomButton instructionsButton = new CustomButton("?");
-        instructionsButton.setFont(timeFont);
+        instructionsButton.setFont(TIME_FONT);
         instructionsButton.setBounds(250, 25, 100, 100);
         instructionsButton.setBackground(Color.gray);
         instructionsButton.setNormalColor(Color.gray);
@@ -133,7 +133,7 @@ public class CircuitsPanel extends JPanel {
     //Add return button
     public CustomButton addReturnButton() {
         CustomButton returnButton = new CustomButton("GO BACK");
-        returnButton.setFont(fieldBoldFont);
+        returnButton.setFont(FIELD_BOLD_FONT);
         returnButton.setBounds(20, 80, 200, 40);
         returnButton.addActionListener(new ActionListener() {
             @Override
@@ -164,7 +164,7 @@ public class CircuitsPanel extends JPanel {
         CustomButton removeButton = new CustomButton("Remove Circuit");
 
         //Series button
-        seriesButton.setFont(fieldBoldFont);
+        seriesButton.setFont(FIELD_BOLD_FONT);
         seriesButton.setBounds(110, 400, 200, 50);
         seriesButton.addActionListener(new ActionListener() {
             @Override
@@ -180,7 +180,7 @@ public class CircuitsPanel extends JPanel {
         });
 
         //Parallel button
-        parallelButton.setFont(fieldBoldFont);
+        parallelButton.setFont(FIELD_BOLD_FONT);
         parallelButton.setBounds(110, 500, 200, 50);
         parallelButton.addActionListener(new ActionListener() {
             @Override
@@ -196,7 +196,7 @@ public class CircuitsPanel extends JPanel {
         });
 
         //Remove Circuit button
-        removeButton.setFont(fieldBoldFont);
+        removeButton.setFont(FIELD_BOLD_FONT);
         removeButton.setBounds(50, 200, 300, 50);
         removeButton.addActionListener(new ActionListener() {
             @Override
@@ -250,7 +250,7 @@ public class CircuitsPanel extends JPanel {
 
     //Set parallel buttons for changing parallel variables
     public void setParallelVarButtons() {
-        incBVParallel.setFont(fieldFont);
+        incBVParallel.setFont(FIELD_FONT);
         incBVParallel.setBounds(100, 400, 60, 50);
         incBVParallel.addActionListener(new ActionListener() {
             @Override
@@ -260,7 +260,7 @@ public class CircuitsPanel extends JPanel {
             }
         });
 
-        decBVParallel.setFont(fieldFont);
+        decBVParallel.setFont(FIELD_FONT);
         decBVParallel.setBounds(200, 400, 60, 50);
         decBVParallel.addActionListener(new ActionListener() {
             @Override
@@ -272,7 +272,7 @@ public class CircuitsPanel extends JPanel {
             }
         });
 
-        incRes1Parallel.setFont(fieldFont);
+        incRes1Parallel.setFont(FIELD_FONT);
         incRes1Parallel.setBounds(100, 600, 60, 50);
         incRes1Parallel.addActionListener(new ActionListener() {
             @Override
@@ -282,7 +282,7 @@ public class CircuitsPanel extends JPanel {
             }
         });
 
-        decRes1Parallel.setFont(fieldFont);
+        decRes1Parallel.setFont(FIELD_FONT);
         decRes1Parallel.setBounds(200, 600, 60, 50);
         decRes1Parallel.addActionListener(new ActionListener() {
             @Override
@@ -294,7 +294,7 @@ public class CircuitsPanel extends JPanel {
             }
         });
 
-        incRes2Parallel.setFont(fieldFont);
+        incRes2Parallel.setFont(FIELD_FONT);
         incRes2Parallel.setBounds(100, 800, 60, 50);
         incRes2Parallel.addActionListener(new ActionListener() {
             @Override
@@ -304,7 +304,7 @@ public class CircuitsPanel extends JPanel {
             }
         });
 
-        decRes2Parallel.setFont(fieldFont);
+        decRes2Parallel.setFont(FIELD_FONT);
         decRes2Parallel.setBounds(200, 800, 60, 50);
         decRes2Parallel.addActionListener(new ActionListener() {
             @Override
@@ -336,7 +336,7 @@ public class CircuitsPanel extends JPanel {
 
     //Series Variable Buttons
     public void setSeriesVarButtons() {
-        incBVSeries.setFont(fieldFont);
+        incBVSeries.setFont(FIELD_FONT);
         incBVSeries.setBounds(100, 400, 60, 50);
         incBVSeries.addActionListener(new ActionListener() {
             @Override
@@ -346,7 +346,7 @@ public class CircuitsPanel extends JPanel {
             }
         });
 
-        decBVSeries.setFont(fieldFont);
+        decBVSeries.setFont(FIELD_FONT);
         decBVSeries.setBounds(200, 400, 60, 50);
         decBVSeries.addActionListener(new ActionListener() {
             @Override
@@ -358,7 +358,7 @@ public class CircuitsPanel extends JPanel {
             }
         });
 
-        incRes1.setFont(fieldFont);
+        incRes1.setFont(FIELD_FONT);
         incRes1.setBounds(100, 600, 60, 50);
         incRes1.addActionListener(new ActionListener() {
             @Override
@@ -368,7 +368,7 @@ public class CircuitsPanel extends JPanel {
             }
         });
 
-        decRes1.setFont(fieldFont);
+        decRes1.setFont(FIELD_FONT);
         decRes1.setBounds(200, 600, 60, 50);
         decRes1.addActionListener(new ActionListener() {
             @Override
@@ -380,7 +380,7 @@ public class CircuitsPanel extends JPanel {
             }
         });
 
-        incRes2.setFont(fieldFont);
+        incRes2.setFont(FIELD_FONT);
         incRes2.setBounds(100, 800, 60, 50);
         incRes2.addActionListener(new ActionListener() {
             @Override
@@ -390,7 +390,7 @@ public class CircuitsPanel extends JPanel {
             }
         });
 
-        decRes2.setFont(fieldFont);
+        decRes2.setFont(FIELD_FONT);
         decRes2.setBounds(200, 800, 60, 50);
         decRes2.addActionListener(new ActionListener() {
             @Override
@@ -426,7 +426,7 @@ public class CircuitsPanel extends JPanel {
 
         //Title
         g.setColor(Color.white);
-        g.setFont(titleFont);
+        g.setFont(TITLE_FONT);
         g.drawString("CIRCUITS", (int) (mechanics.getScreenWidth() / 3.0), 150);
 
         //Draw the Series circuit election
@@ -452,7 +452,7 @@ public class CircuitsPanel extends JPanel {
         if (removed) {
             g.setColor(Color.black);
             g.fillRect(200, 200, 2000, 2000);
-            g.setColor(grey);
+            g.setColor(GREY);
             g.fillRect(80, 310, 260, 280);
             g.setColor(Color.white);
             g.drawRect(80,310, 260, 280);
@@ -461,7 +461,7 @@ public class CircuitsPanel extends JPanel {
 
     //Draw the Series circuit
     public void drawSeries(Graphics g) {
-        g.setColor(grey);
+        g.setColor(GREY);
         g.fillRect(50, 300, 550, 600);
         g.fillRect(1300, 300, 550, 600);
 
@@ -484,11 +484,11 @@ public class CircuitsPanel extends JPanel {
         g.drawRect(900, 440, 100, 20);
         g.drawRect(900, 940, 100, 20);
 
-        g.setFont(smallFont);
+        g.setFont(SMALL_FONT);
         g.drawString("Resistor 1", 910, 455);
         g.drawString("Resistor 2", 910, 955);
 
-        g.setFont(fieldFont);
+        g.setFont(FIELD_FONT);
         g.drawString("" + df.format(seriesCircuit.getBatteryVoltage()) + " Volts", 400, 450);
         g.drawString("" + df.format(seriesCircuit.getResistor1().getResistance()) + " Ohms", 400, 650);
         g.drawString("" + df.format(seriesCircuit.getResistor2().getResistance()) + " Ohms", 400, 850);
@@ -508,7 +508,7 @@ public class CircuitsPanel extends JPanel {
 
     //Draw the Parallel circuit
     public void drawParallel(Graphics g) {
-        g.setColor(grey);
+        g.setColor(GREY);
         g.fillRect(50, 300, 550, 600);
         g.fillRect(1300, 300, 550, 600);
 
@@ -532,11 +532,11 @@ public class CircuitsPanel extends JPanel {
         g.drawRect(940, 650, 20, 100);
         g.drawRect(1190, 650, 20, 100);
 
-        g.setFont(smallFont);
+        g.setFont(SMALL_FONT);
         g.drawString("Resistor 1", 920, 640);
         g.drawString("Resistor 2", 1170, 640);
 
-        g.setFont(fieldFont);
+        g.setFont(FIELD_FONT);
         g.drawString("" + df.format(parallelCircuit.getBatteryVoltage()) + " Volts", 400, 450);
         g.drawString("" + df.format(parallelCircuit.getResistor1().getResistance()) + " Ohms", 400, 650);
         g.drawString("" + df.format(parallelCircuit.getResistor2().getResistance()) + " Ohms", 400, 850);
@@ -556,7 +556,7 @@ public class CircuitsPanel extends JPanel {
 
     //Add Label Method
     public void addLabel(JLabel label, int x, int y) {
-        label.setFont(fieldBoldFont);
+        label.setFont(FIELD_BOLD_FONT);
         label.setBounds(x, y, 400, 100);
         label.setForeground(Color.white);
         add(label);
